@@ -22,6 +22,7 @@ resource "random_string" "suffix"{
 module "vpc" {
   source               = "terraform-aws-modules/vpc/aws"
   version              = "2.6.0"
+
   name                 = "microservices-vpc"
   cidr                 = "10.0.0.0/16"
   azs                  = data.aws_availability_zones.available.names
@@ -29,6 +30,7 @@ module "vpc" {
   public_subnets       = ["10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24"]
   enable_nat_gateway   = true
   single_nat_gateway   = true
+  one_nat_gateway_per_az = false
   enable_dns_hostnames = true
 
   tags = {
