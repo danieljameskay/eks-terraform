@@ -6,11 +6,11 @@ resource "aws_security_group" "worker_group_mgmt_one" {
         from_port = 22
         to_port   = 22
         protocol  = "tcp"
-    }
 
     cidr_blocks = [
         "10.0.0.0/8"
     ]
+  }
 }
 
 resource "aws_security_group" "worker_group_mgmt_two" {
@@ -21,11 +21,11 @@ resource "aws_security_group" "worker_group_mgmt_two" {
         from_port = 22
         to_port   = 22
         protocol  = "tcp"
-    }
-
+    
     cidr_blocks = [
         "192.168.0.0/16"
     ]
+  }
 }
 
 resource "aws_security_group" "all_worker_mgmt" {
@@ -40,7 +40,7 @@ resource "aws_security_group" "all_worker_mgmt" {
     cidr_blocks = [
       "10.0.0.0/8",
       "172.16.0.0/12",
-      "192.168.0.0/16",
+      "192.168.0.0/16"
     ]
   }
 }
