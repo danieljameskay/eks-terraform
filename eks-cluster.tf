@@ -1,5 +1,5 @@
 data "external" "users" {
-  program = [{var.users}]
+  program = ["echo", "${var.users}"]
 }
 
 output "users_map" {
