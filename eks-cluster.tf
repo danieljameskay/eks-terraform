@@ -9,7 +9,7 @@ module "eks" {
     GithubOrg   = "terraform-aws-modules"
   }
 
-  map_users = tolist(var.map_users)
+  map_users = tolist(var.users)
 
   vpc_id = module.vpc.vpc_id
 

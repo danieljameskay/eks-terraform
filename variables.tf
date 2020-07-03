@@ -1,3 +1,3 @@
-variable "map_users" {
+variable "users" {
     type = string
 }
