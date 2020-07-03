@@ -1,13 +1,8 @@
 variable "users" {
-  type = list(map(string))(
-  [{
-    group = string
-    user_arn = string
-    username = string
-  }])
+  type = list(map(string))
   default = [
     {
-      group = ""
+      group    = ""
       user_arn = ""
       username = ""
     }
