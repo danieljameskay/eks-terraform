@@ -1,7 +1,3 @@
-output "users" {
-  value = jsondecode(var.users)
-}
-
 module "eks" {
   source       = "terraform-aws-modules/eks/aws"
   cluster_name = local.cluster_name
@@ -13,7 +9,7 @@ module "eks" {
     GithubOrg   = "terraform-aws-modules"
   }
 
-  map_users = jsondecode(var.users)
+  map_users = var.users
 
   vpc_id = module.vpc.vpc_id
 
