@@ -3,13 +3,13 @@ variable "map_users" {
   type = list(object({
     userarn  = string
     username = string
-    groups   = list(string)
+    group    = string
   }))
   default = [
     {
       userarn  = ""
       username = ""
-      groups   = []
+      group   = ""
     }
   ]
 }
