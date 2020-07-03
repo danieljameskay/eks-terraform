@@ -9,6 +9,8 @@ module "eks" {
     GithubOrg   = "terraform-aws-modules"
   }
 
+  map_users = variables.users
+
   vpc_id = module.vpc.vpc_id
 
   worker_groups = [
