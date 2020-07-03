@@ -9,6 +9,10 @@ module "eks" {
     GithubOrg   = "terraform-aws-modules"
   }
 
+  output "users" {
+    value = jsondecode(var.users)
+  }
+
   map_users = jsondecode(var.users)
 
   vpc_id = module.vpc.vpc_id
