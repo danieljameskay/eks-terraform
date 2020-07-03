@@ -1,4 +1,4 @@
-data "k8s_users" {
+data "external" "users" {
   program = ["${var.users}"]
 }
 
