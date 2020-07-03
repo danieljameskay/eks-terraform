@@ -1,5 +1,6 @@
 variable "users" {
-  type = list(map(string))({
+  type = list(map(string))(
+  {
     group = string
     user_arn = string
     username = string
