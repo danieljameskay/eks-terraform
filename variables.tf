@@ -5,7 +5,6 @@ variable "users" {
     user_arn = string
     username = string
   })
-
   default = [
     {
       group = ""
@@ -14,5 +13,3 @@ variable "users" {
     }
   ]
 }
-
-list(map(string))
