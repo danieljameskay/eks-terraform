@@ -1,3 +1,7 @@
+output "users" {
+  value = jsondecode(var.users)
+}
+
 module "eks" {
   source       = "terraform-aws-modules/eks/aws"
   cluster_name = local.cluster_name
@@ -7,10 +11,6 @@ module "eks" {
     Environment = "test"
     GithubRepo  = "terraform-aws-eks"
     GithubOrg   = "terraform-aws-modules"
-  }
-
-  output "users" {
-    value = jsondecode(var.users)
   }
 
   map_users = jsondecode(var.users)
