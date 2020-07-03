@@ -1,11 +1,3 @@
-data "external" "users" {
-  program = ["${var.users}"]
-}
-
-output "k8s_users_map" {
-  value = "${data.k8s_users.json.result}"
-}
-
 module "eks" {
   source       = "terraform-aws-modules/eks/aws"
   cluster_name = local.cluster_name
@@ -17,7 +9,7 @@ module "eks" {
     GithubOrg   = "terraform-aws-modules"
   }
 
-  map_users = variables.k8s_users_map
+  map_users = variables.users
 
   vpc_id = module.vpc.vpc_id
 
