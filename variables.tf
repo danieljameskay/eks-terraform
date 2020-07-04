@@ -1,6 +1,6 @@
 variable "users" {
   description = "Additional IAM users to add to the aws-auth configmap."
-  type = set(object({
+  type = list(object({
     userarn  = string
     username = string
     groups   = list(string)
