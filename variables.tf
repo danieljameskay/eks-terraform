@@ -3,13 +3,13 @@ variable "users" {
   type = set(object({
     userarn  = string
     username = string
-    groups   = string
+    groups   = list(string)
   }))
   default = [
     {
       userarn  = ""
       username = ""
-      groups   = ""
+      groups   = [""]
     }
   ]
 }
