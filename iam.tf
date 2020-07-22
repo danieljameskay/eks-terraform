@@ -157,7 +157,6 @@ resource "aws_iam_role" "eks-alb-ingress-controller" {
       "Principal": {
         "Federated": "arn:aws:iam::983527076849:oidc-provider/oidc.eks.eu-west-2.amazonaws.com/id/63FC83C12C1175A52B73FA55E0906127"
       },
-      "Effect": "Allow",
       "Sid": "",
       "Action": "sts:AssumeRoleWithWebIdentity",
       "Condition": {
