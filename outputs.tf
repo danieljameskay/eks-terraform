@@ -1,3 +1,9 @@
+output "arn_eks-alb-ingress-controller_role" {
+  description = "ARN of the EKS ALB Ingress Controller role."
+  value       = aws_iam_role.eks-alb-ingress-controller.arn
+}
+
+
 output "cluster_endpoint" {
   description = "Endpoint for EKS control plane."
   value       = module.eks.cluster_endpoint
