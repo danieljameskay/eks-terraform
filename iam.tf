@@ -1,6 +1,6 @@
-resource "aws_iam_policy" "alb_ingress_controller_policy" {
+resource "aws_iam_role_policy" "alb_ingress_controller_policy" {
   name        = "alb_ingress_controller_policy"
-  path        = "/"
+  role        = aws_iam_role.eks-alb-ingress-controller.id
   description = "ALB Ingress Controller pod that allows it to make calls to AWS APIs on your behalf. "
 
   policy = <<EOF
@@ -150,7 +150,6 @@ EOF
 
 resource "aws_iam_role" "eks-alb-ingress-controller" {
   name               = "eks-alb-ingress-controller"
-  assume_role_policy = "aws_iam_policy.alb_ingress_controller_policy"
 }
 
 
