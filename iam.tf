@@ -150,8 +150,31 @@ EOF
 
 resource "aws_iam_role" "eks-alb-ingress-controller" {
   name               = "eks-alb-ingress-controller"
-}
 
+  assume_role_policy = <<-EOF
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::983527076849:oidc-provider/oidc.eks.eu-west-2.amazonaws.com/id/63FC83C12C1175A52B73FA55E0906127"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringEquals": {
+              "oidc.eks.eu-west-2.amazonaws.com/id/63FC83C12C1175A52B73FA55E0906127:aud": "sts.amazonaws.com"
+            }
+          }
+        }
+        "Effect": "Allow",
+        "Sid": ""
+      }
+    ]
+  }
+  EOF
+}
 
 
 
