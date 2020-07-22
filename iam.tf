@@ -1,8 +1,6 @@
 resource "aws_iam_role_policy" "alb_ingress_controller_policy" {
   name        = "alb_ingress_controller_policy"
   role        = aws_iam_role.eks-alb-ingress-controller.id
-  description = "ALB Ingress Controller pod that allows it to make calls to AWS APIs on your behalf. "
-
   policy = <<EOF
 {
   "Version": "2012-10-17",
