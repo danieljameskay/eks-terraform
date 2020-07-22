@@ -150,7 +150,7 @@ EOF
 
 resource "aws_iam_role" "eks-alb-ingress-controller" {
   name               = "eks-alb-ingress-controller"
-  assume_role_policy = "${aws_iam_policy.alb_ingress_controller_policy}"
+  assume_role_policy = "aws_iam_policy.alb_ingress_controller_policy"
 }
 
 
